@@ -3,17 +3,27 @@ Write a program that asks the user how many Fibonnaci numbers to generate and th
 """
 
 def fibonacci(numbers):
-	numbers = numbers-2
-	fibo = [1,1]
-	while numbers != 0:
-		fibo.append(fibo[-1]+fibo[-2])
-		numbers -= 1
-	return fibo
+	if numbers == 0 :
+		fibo = []
+		return fibo
+	elif numbers == 1:
+		fibo = [1]
+		return fibo
+	elif numbers == 2:
+		fibo = [1,1]
+		return fibo
+	else:
+		numbers = numbers-2
+		fibo = [1,1]
+		while numbers != 0:
+			fibo.append(fibo[-1]+fibo[-2])
+			numbers -= 1
+		return fibo
 
 def validate(number):
 	if not number.isnumeric():
 		number = input("Please type an integer number: ")
-		validate(number)
+		validate(number)	
 	else:
 		return int(number)
 
